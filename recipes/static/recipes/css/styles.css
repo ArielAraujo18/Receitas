@@ -169,6 +169,7 @@ h1,h2,h3,h4,h5,h6{
     flex: 1 1 300px;
     width: 100%; 
     margin: 0 auto;
+    height: fit-content;
 }
 
 .recipe-list-item:hover{

@@ -1,6 +1,6 @@
 <div class="recipe recipe-list-item">
     <div class="recipe-cover">
-        <img src="https://placehold.co/1280x720/png/269fe6" alt="Temporario">
+        <img src="{{ recipe.cover.url }}" alt="Temporario">
     </div>
     <div class="recipe-title-container">
         <h2 class="recipe-title">
@@ -14,17 +14,17 @@
         </span>
         <span class="recipe-author-item">
             <i class="fas fa-calendar-alt"></i>
-            23/03/2025 às 23:36
+            {{ recipe.created_at|date:"d/m/Y"}} às {{recipe.created_at|date:"H:i"}}
         </span>
         <span class="recipe-author-item">
             <a href="/recipes">
                 <i class="fas fa-layer-group"></i>
-                <span>Café da manhã</span>
+                <span>{{ recipe.category.name }}</span>
             </a>
         </span>
     </div>
     <div class="recipe-content">
-        <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Repellat veritatis perspiciatis vero, aliquid vitae harum?</p>
+        <p>{{ recipe.description}}</p>
     </div>
 
 
@@ -32,13 +32,13 @@
         <div class="recipe-meta recipe-preparation">
             <h3 class="recipe-meta-title"><i class="fas fa-stopwatch"></i></h3>
             <div class="recipe-meta-text">
-                0 Minutos
+                {{recipe.preparation_time}} {{recipe.preparation_time_unit}}
             </div>
         </div>
         <div class="recipe-meta recipe-servings">
             <h3 class="recipe-meta-title"><i class="fas fa-pizza-slice"></i> Poções</h3>
             <div class="recipe-meta-text">
-                0 Porções
+                {{recipe.servings}} {{recipe.servings_unit}}
             </div>
         </div>
     </div>
