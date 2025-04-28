@@ -5,7 +5,9 @@ from . import views
 
 #HTTP REQUEST
 
+app_name = 'recipes'
+
 urlpatterns = [
-    path('', views.home),
-    path('recipes/<id>/', views.recipe),
+    path('', views.home, name="home"),
+    path('recipes/<int:id>/', views.recipe, name="recipe"),
 ]
